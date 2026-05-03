@@ -1,0 +1,5 @@
+# Requirements:
+# Service 1: web (Flask app)
+# Service 2: redis (use official image)
+# Map ports
+# Use depends_on
