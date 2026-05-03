@@ -1,5 +1,25 @@
-# Requirements:
-# Service 1: web (Flask app)
-# Service 2: redis (use official image)
-# Map ports
-# Use depends_on
+# version: "3"
+
+# services:
+#   web:
+#     build: ./app
+#     ports:
+#       - "5001:5000"
+#     depends_on:
+#       - redis
+
+#   redis:
+#     image: redis:alpine
+#     ports:
+#       - "6379:6379"
+
+  environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+  volumes:
+      - db_data:/var/lib/postgresql/data
+
+
+volumes:
+  db_data:
